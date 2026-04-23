@@ -1,0 +1,20 @@
+@prefix ex: <http://healthkg.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### Classes
+ex:District rdf:type rdf:Class .
+ex:Hospital rdf:type rdf:Class .
+
+### Core properties
+ex:population rdf:type rdf:Property .
+ex:elderly_pct rdf:type rdf:Property .
+ex:lat rdf:type rdf:Property .
+ex:lon rdf:type rdf:Property .
+
+ex:hasHospital rdf:type rdf:Property .
+ex:nearestHospitalDistance rdf:type rdf:Property .
+ex:walkTimeMinutes rdf:type rdf:Property .
+
+### AI-generated properties (important for ML part)
+ex:riskScore rdf:type rdf:Property .
+ex:underservedScore rdf:type rdf:Property .

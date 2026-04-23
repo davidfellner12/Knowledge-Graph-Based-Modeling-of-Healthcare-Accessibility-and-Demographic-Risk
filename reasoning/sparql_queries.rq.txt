@@ -1,0 +1,43 @@
+PREFIX ex: <http://healthkg.org/>
+
+SELECT ?district
+WHERE {
+  ?district ex:elderly_pct ?e .
+  ?district ex:nearestHospitalDistance ?d .
+  ?district ex:population ?p .
+
+  FILTER(?e > 0.20 && ?d > 5)
+}
+
+PREFIX ex: <http://healthkg.org/>
+
+SELECT ?district
+WHERE {
+  ?district ex:population ?p .
+  ?district ex:hasHospital ?h .
+
+  FILTER(?p > 30000 && !BOUND(?h))
+}
+
+PREFIX ex: <http://healthkg.org/>
+
+SELECT ?district
+WHERE {
+  ?district ex:nearestHospitalDistance ?d .
+  ?district ex:walkTimeMinutes ?t .
+
+  FILTER(?d > 4 || ?t > 45)
+}
+
+PREFIX ex: <http://healthkg.org/>
+
+SELECT ?district
+WHERE {
+  ?district ex:elderly_pct ?e .
+  ?district ex:population ?p .
+  ?district ex:nearestHospitalDistance ?d .
+
+  BIND((?e * 0.5 + ?d * 0.5) AS ?risk)
+
+  FILTER(?risk > 0.6)
+}

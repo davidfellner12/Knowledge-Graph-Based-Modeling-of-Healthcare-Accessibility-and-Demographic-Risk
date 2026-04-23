@@ -1,0 +1,10 @@
+streamlit
+flask
+rdflib
+pykeen
+torch
+torch-geometric
+pandas
+geopy
+pydeck
+networkx

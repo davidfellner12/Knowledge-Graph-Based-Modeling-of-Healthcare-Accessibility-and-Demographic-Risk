@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.env/
+
+# PyTorch / models
+*.pt
+*.pth
+
+# Data (large/generated files)
+data/raw/
+data/processed/
+ml/graphsage_data.pt
+ml/graphsage_model.pt
+
+# IDE
+.vscode/
+.idea/
